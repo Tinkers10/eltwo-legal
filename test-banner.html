@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Banner Test</title></head><body>
+<h1>CookieCut test page</h1>
+<p id="result">BANNER_VISIBLE</p>
+<div id="cookie-consent-banner" style="position:fixed;bottom:0;left:0;right:0;background:#222;color:#fff;padding:24px;z-index:9999">
+<p>We use cookies to improve your experience, analyze traffic, and show personalized advertising. See our cookie policy. Manage your consent preferences below.</p>
+<button id="accept-btn" onclick="record('ACCEPT_CLICKED')">Accept all cookies</button>
+<button id="reject-btn" onclick="record('REJECT_CLICKED')">Reject all</button>
+<button id="settings-btn" onclick="record('SETTINGS_CLICKED')">Cookie settings</button>
+</div>
+<script>
+function record(what){
+  document.getElementById('result').textContent = what + ' at +' + (performance.now()|0) + 'ms';
+  document.getElementById('cookie-consent-banner').style.display='none';
+}
+</script>
+</body></html>
